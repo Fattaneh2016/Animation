@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+    <style>
+        .animated-object {
+            height: 50px;
+            width: 50px;
+            background-color: red;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        button {
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script type="text/javascript">
+$( document ).ready(function() {
+
+    // the animate method at it's most basic
+    $('.js_move-left').click(function(){
+        $('.animated-object').animate({
+          "left": 200
+        }, 500);
+    });
+
+    // the animate method at it's most basic
+    $('.js_set-padding').click(function(){
+        $('.animated-object').animate({
+          "padding": 100
+        }, 500);
+    });
+
+    // one thing that you can do with the `animate()` method
+    // that you cannot with CSS is declaring relative values in
+    // the animate object's property. By declaring "+=" or "-="
+    // the function will be declared relative to the elements
+    //  current value, rather than a specific value
+    $('.js_animate-left').click(function(){
+        $('.animated-object').animate({
+          "left": "+=50"
+        }, 500);
+    });
+
+    $('.js_animate-padding').click(function(){
+        $('.animated-object').animate({
+          "padding": "+=51"
+        }, 500);
+    });
+
+    // you can also animate multiple properties at once
+    $('.js_animate-left-padding').click(function(){
+        $('.animated-object').animate({
+          "padding": "-=50",
+          "left": "-=50"
+        }, 500);
+    });
+
+});
+    </script>
+
+</head>
+<body>
+    <button class="js_move-left">move 200px from the left of parent</button>
+    <button class="js_set-padding">set padding to 100px</button><br>
+    <button class="js_animate-padding">add 50px to padding</button>
+    <button class="js_animate-left">move 50px from left of current location</button><br>
+    <button class="js_animate-left-padding">reduce padding by 50px and move 50px from left of current location</button>
+
+    <div class="animated-object"></div>
+    
+
+</body>
+</html>
