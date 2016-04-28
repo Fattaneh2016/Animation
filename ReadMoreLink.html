@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--Break the content into two parts: what you want to show when the page loads, and the extra content to show after the user clicks “read more”.-->
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+    <script type="text/javascript">
+       
+    </script>
+</head>
+<body>
+    <p class="readMore">
+        Apply the learning:
+
+        Use an existing long text paragraph on your website (or add one to be used in this activity.)
+        Break the content into two parts: what you want to show when the page loads, and the extra content to show after the user clicks “read more”.
+        Add a “Read More” link to the paragraph... <a class="readMoreLink" href="#home"> Read more</a>
+
+    </p>
+    <p class="extra">Add a click handler to this link that shows the hidden content using animate().</p>
+
+    <script type="text/javascript">
+        $(".extra").hide()
+        $("readMoreLink").text = "Read More";
+        $(document).ready(function () {
+            //$(".readMoreLink").on("click" , "extra".()
+            $(".readMoreLink").click(function () {
+                $(".extra").toggle();
+                
+            });
+        })
+    </script>
+</body>
+</html>
